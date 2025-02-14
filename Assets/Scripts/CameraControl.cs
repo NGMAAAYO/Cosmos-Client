@@ -32,7 +32,7 @@ public class CameraControl : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        if (Input.GetMouseButton(0)) {
+        if (Input.GetMouseButton(1)) {
             Difference = (Camera.main.ScreenToWorldPoint(Input.mousePosition)) - Camera.main.transform.position;
             if (drag == false) {
                 drag = true;
@@ -45,7 +45,7 @@ public class CameraControl : MonoBehaviour
         if  (drag) {
             Camera.main.transform.position = Origin - Difference;
         }
-        if (Input.GetMouseButton(1)) {
+        if (Input.GetMouseButton(2)) {
             Camera.main.transform.position = ResetCamera;
         }
         // setup and clamp the range of mouse scroll
